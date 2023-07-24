@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    color: white;
+    background-color: black;
+}
+
+main {
+    overflow: scroll;
+    width: 100vw;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+}
+
+img {
+    user-select: none;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+
+    scroll-snap-align: start;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+.intro::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    
+}
+
+.intro-center {
+    width: 40%;
+
+    padding: 1em;
+
+    border: 4px solid yellow;
+    border-radius: 8px;
+    background-color: #444;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-username {
+    font-size: 2em;
+}
+
+.intro-bio {
+    font-size: small;
+    margin-bottom: 1em;
+}
+
+.socials-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-basis: 0;
+}
+
+.socials-panel {
+    border: 2px solid yellow;
+    border-radius: 4px;
+
+    background-color: darkslateblue;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+
+    cursor: pointer;
+}
+
+.socials-username,
+.socials-username:visited 
+{
+    color: inherit;
+    text-shadow: none;
+}
+
+.socials-panel:hover > .socials-username
+{
+    color: inherit;
+    text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px #553300,0px 0px 10px #553300;
+    transition: text-shadow 1s;
+}
+
+.socials-logo,
+.socials-extlink {
+    width: 1em;
+}
